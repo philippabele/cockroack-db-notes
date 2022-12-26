@@ -54,6 +54,20 @@ download the custome resource
 
 `curl -O https://raw.githubusercontent.com/cockroachdb/cockroach-operator/v2.9.0/examples/example.yaml`
 
-edit and apply it. NOTE: I needed to change the requested storage, because the default minikube cluster only has 20 Gi in total. See [my deployment file](https://raw.githubusercontent.com/philippabele/cockroack-db-notes/local-deployment.yaml) for more details.
+edit and apply it. See [my deployment file](https://raw.githubusercontent.com/philippabele/cockroack-db-notes/local-deployment.yaml) for more details.
 
 `kubectl apply -f example.yaml`
+
+If the cluster is running `kubectl get pods` should look like
+
+```
+NAME                                          READY   STATUS    RESTARTS      AGE
+cockroach-operator-manager-77f488b967-rhn2j   1/1     Running   1 (15h ago)   25h
+cockroachdb-0                                 1/1     Running   1 (77s ago)   16h
+cockroachdb-1                                 1/1     Running   1 (77s ago)   16h
+cockroachdb-2                                 1/1     Running   1 (77s ago)   16h
+```
+
+shutdown the cluster with `minikube stop`
+
+For future use you can restart the cluster with `minikube start` and set the context again to `kubectl config set-context --current --namespace=cockroach-operator-system`
