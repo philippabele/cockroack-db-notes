@@ -38,9 +38,9 @@ spec:
     limits:
       cpu: 2
       memory: 8Gi
-  tlsEnabled: true
-# You can set either a version of the db or a specific image name
-# cockroachDBVersion: v22.2.0
+  tlsEnabled: false
+  # You can set either a version of the db or a specific image name
+  # cockroachDBVersion: v22.2.0
   image:
     name: cockroachdb/cockroach:v22.2.0
   # nodes refers to the number of crdb pods that are created
@@ -68,4 +68,3 @@ spec:
   # nodeSelectors used to match against
   # nodeSelector:
   #   worker-pool-name: crdb-workers
-
