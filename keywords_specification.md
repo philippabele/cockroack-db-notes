@@ -1,0 +1,12 @@
+
+- tools: ecosystem to interact with the database, DBeaver
+- protocol: postgres wire protocol , raft protocol
+- language: sql standard
+- locality
+- multi-region: global applications
+- scale: declarative, manifest
+- fault tolerance: behaviour in case of failure
+- recovery: self healing
+- admin ui: easy web access to get cluster information
+- sql tuning: explain to investigate logical query plans
+- sql features: secondary indexes
